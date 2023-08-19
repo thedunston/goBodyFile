@@ -1,4 +1,7 @@
 # goBodyFile
+
+**Status: Activey supported.**
+
 Create a body file and timeline for incident response investigations.
 
 ### Background
