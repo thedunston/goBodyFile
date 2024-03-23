@@ -126,6 +126,15 @@ func processFile(filename string, outputFile *os.File, theSID bool) {
 	// Fetch SIDs
 	uidSID, groupSID, err := getSIDs(filename, theSID)
 	checkProcessErr(err)
+	
+	// Check if the sid and gid have a hyphen.
+	if strings.Contains(uidSID, "-") || strings.Contains(groupSID, "-") {
+
+		// Get the last value.
+		uidSID = strings.Split(uidSID, "-")[len(strings.Split(uidSID, "-"))-1]
+		groupSID = strings.Split(groupSID, "-")[len(strings.Split(groupSID, "-"))-1]
+
+	}
 
 	// Fetch file's information using os package
 	fileInfo, err := os.Stat(filename)
