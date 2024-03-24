@@ -60,7 +60,7 @@ Check for errors when processing files.
 func checkProcessErr(err error) {
 
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 }
@@ -149,7 +149,7 @@ func processFile(filename string, outputFile *os.File, theSID bool) {
 	// Gets the files last access time, last write time, and creation time.
 	var theFile windows.ByHandleFileInformation
 	if err := windows.GetFileInformationByHandle(getFileInfo, &theFile); err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 	// File mode in octal.
