@@ -12,7 +12,11 @@ While converting the Python program to Golang, I decided to integrate the [Airbu
 
 ### Building
 
-The project now uses a unified codebase with build tags for cross-platform support. Simply run:
+The project now uses a unified codebase with build tags for cross-platform support. You will first have to install Go and then run:
+
+```
+go build
+```
 
 This will automatically build for your current platform (Linux, Windows, or macOS).
 
